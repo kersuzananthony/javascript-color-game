@@ -1,0 +1,35 @@
+body {
+    background-color: #232323;
+}
+
+h1 {
+    color: white;
+}
+
+#stripe {
+    background: white;
+    height: 30px;
+    text-align: center;
+}
+
+#stripe span {
+    color: #232323;
+}
+
+button.selected {
+    background: blue;
+}
+
+.container {
+    width: 600px;
+    margin: 0 auto;
+}
+
+.square {
+    width: 30%;
+    padding-bottom: 30%;
+    margin: 1.66%;
+    background: purple;
+
+    float: left;
+}
