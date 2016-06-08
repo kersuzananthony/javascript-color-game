@@ -1,35 +1,27 @@
 var colors;
 var pickedColor;
-var difficultyLevel = 6;
+var difficultyLevel = document.querySelector("button.selected").getAttribute("data-level");
 
 var squares = document.querySelectorAll(".square");
 var h1 = document.querySelector("h1");
 var colorDisplay = document.getElementById("color_display");
 var messageDisplay = document.querySelector("#message");
 var resetButton = document.querySelector("#reset");
-var easyButton = document.querySelector("#easy");
-var hardButton = document.querySelector("#hard");
-var extremeButton = document.querySelector("#extreme");
+var modeButtons = document.querySelectorAll(".mode");
+
+for (var i = 0; i < modeButtons.length; i++) {
+    modeButtons[i].addEventListener("click", function() {
+        for (var i = 0; i < modeButtons.length; i++) {
+            modeButtons[i].classList.remove("selected");
+        }
+
+        this.classList.add("selected");
+
+        changeGameLevel(this.getAttribute("data-level"));
+    });
+}
 
 resetButton.addEventListener("click", startGame);
-easyButton.addEventListener("click", function() {
-    hardButton.classList.remove("selected");
-    extremeButton.classList.remove("selected");
-    this.classList.add("selected");
-    changeGameLevel(3)
-});
-hardButton.addEventListener("click", function() {
-    this.classList.add("selected");
-    extremeButton.classList.remove("selected");
-    easyButton.classList.remove("selected");
-    changeGameLevel(6)
-});
-extremeButton.addEventListener("click", function() {
-    this.classList.add("selected");
-    easyButton.classList.remove("selected");
-    hardButton.classList.remove("selected");
-    changeGameLevel(9);
-});
 
 startGame();
 
@@ -37,8 +29,9 @@ function startGame() {
     colors = generateRandomColors(difficultyLevel);
     pickedColor = pickedRandomColor();
     colorDisplay.textContent = pickedColor;
-    h1.style.background = "#232323";
-    resetButton.textContent = "New Color";
+    h1.style.background = "steelblue";
+    resetButton.textContent = "New Colors";
+    messageDisplay.textContent = "";
 
     for (var i = 0; i < squares.length; i++) {
         if (colors[i]) {

@@ -1,9 +1,35 @@
 body {
+    margin: 0;
     background-color: #232323;
+
+    font-family: "Montserrat", "Avenir";
 }
 
 h1 {
+    margin: 0;
+    padding: 20px 0;
     color: white;
+    text-align: center;
+    background: steelblue;
+
+    font-weight: normal;
+    text-transform: uppercase;
+    line-height: 1.1;
+
+    -webkit-transition: all 300ms;
+    -moz-transition: all 300ms;
+    -ms-transition: all 300ms;
+    -o-transition: all 300ms;
+    transition: all 300ms;
+}
+
+#color_display {
+    font-size: 200%;
+}
+
+#message {
+    display: inline-block;
+    width: 20%;
 }
 
 #stripe {
@@ -16,13 +42,35 @@ h1 {
     color: #232323;
 }
 
-button.selected {
-    background: blue;
+button {
+    height: 100%;
+    border: none;
+    background: none;
+
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-weight: 700;
+    font-size: inherit;
+
+    color: steelblue;
+    outline: none;
+
+    -webkit-transition: all 300ms;
+    -moz-transition: all 300ms;
+    -ms-transition: all 300ms;
+    -o-transition: all 300ms;
+    transition: all 300ms;
+}
+
+button.selected, button:hover {
+    color: white;
+
+    background: steelblue;
 }
 
 .container {
     width: 600px;
-    margin: 0 auto;
+    margin: 20px auto;
 }
 
 .square {
@@ -31,5 +79,15 @@ button.selected {
     margin: 1.66%;
     background: purple;
 
+    -webkit-border-radius: 15%;
+    -moz-border-radius: 15%;
+    border-radius: 15%;
+
     float: left;
+
+    -webkit-transition: all 300ms;
+    -moz-transition: all 300ms;
+    -ms-transition: all 300ms;
+    -o-transition: all 300ms;
+    transition: all 300ms;
 }

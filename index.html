@@ -6,13 +6,13 @@
     <link rel="stylesheet" href="app.css">
 </head>
 <body>
-<h1>The great <span id="color_display">RGB</span> Color Game!</h1>
+<h1>The great <br><span id="color_display">RGB</span><br> Color Game!</h1>
 <div id="stripe">
     <button id="reset">New Colors</button>
     <span id="message"></span>
-    <button id="easy">Easy</button>
-    <button id="hard" class="selected">Hard</button>
-    <button id="extreme">Extreme</button>
+    <button class="mode" data-level="3">Easy</button>
+    <button class="selected mode" data-level="6">Hard</button>
+    <button class="mode" data-level="9">Extreme</button>
 </div>
 <div class="container">
     <div class="square"></div>
